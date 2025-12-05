@@ -1,0 +1,40 @@
+version: "3.8"
+
+services:
+  # web:
+  #   depends_on:
+  #     - db
+  #   env_file:
+  #     - .env
+  #   environment:
+  #     - SQL_ROOT_PASSWORD=Tr@dyS.2024!
+  #     - SQL_USER=tradys_db
+  #     - SQL_PASSWORD=Tr@dyS.2024!
+  #     - SQL_DATABASE=tradys
+  #     - SQL_HOST=db
+  #     - SQL_PORT=3306
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - 3000:3000
+
+  db:
+    container_name: mysql-container
+    image: mysql:8.0
+    restart: always
+    command: mysqld --default-authentication-plugin=mysql_native_password
+    volumes:
+      - ./tradys-db:/var/lib/mysql
+    env_file:
+      - .env
+    environment:
+      - MYSQL_ROOT_PASSWORD=Tr@dyS.2024!
+      - MYSQL_USER=tradys_db
+      - MYSQL_PASSWORD=Tr@dyS.2024!
+      - MYSQL_DATABASE=tradys
+    ports:
+      - 3306:3306
+
+volumes:
+  tradys-db:

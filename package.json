@@ -1,0 +1,52 @@
+{
+  "name": "tradys-cotizador",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "migration:create": "dotenv -- sequelize-cli migration:create",
+    "seed:create": "dotenv -- sequelize-cli seed:generate --name seed-generate",
+    "migrate": "dotenv -- sequelize-cli db:migrate",
+    "seed": "dotenv -- sequelize-cli db:seed:all",
+    "migrate:rollback": "dotenv -- sequelize-cli db:migrate:undo",
+    "migrate:rollback:all": "dotenv -- sequelize-cli db:migrate:undo:all"
+  },
+  "dependencies": {
+    "@emotion/babel-plugin": "^11.11.0",
+    "@emotion/cache": "^11.11.0",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/icons-material": "^5.15.15",
+    "@mui/lab": "^5.0.0-alpha.170",
+    "@mui/material": "^5.15.15",
+    "@mui/material-nextjs": "^5.15.11",
+    "@mui/system": "^5.15.15",
+    "axios": "^1.6.8",
+    "dotenv": "^16.4.5",
+    "dotenv-cli": "^7.4.1",
+    "geolib": "^3.3.4",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.9.3",
+    "next": "14.1.4",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-number-format": "^5.3.4",
+    "react-slick": "^0.30.2",
+    "sequelize": "^6.37.2",
+    "sequelize-typescript": "^2.1.6"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/react-slick": "^0.23.13",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.4",
+    "react-transition-group": "^4.4.5",
+    "sequelize-cli": "^6.6.2",
+    "typescript": "^5"
+  }
+}

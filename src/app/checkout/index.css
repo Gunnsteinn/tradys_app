@@ -1,0 +1,11 @@
+.css-clttge-MuiAutocomplete-root .MuiOutlinedInput-root {
+    padding: 0 !important;
+}
+
+.MuiBox-root {
+    height: auto !important;
+}
+
+.MuiBox-root > div {
+    width: 100% !important;
+}
