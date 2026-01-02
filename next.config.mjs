@@ -5,7 +5,7 @@ const nextConfig = {
     return config;
   },
   experimental: {
-    serverComponentsExternalPackages: ["sequelize", "sequelize-typescript"],
+    serverComponentsExternalPackages: ["sequelize", "sequelize-typescript", "pg", "pg-hstore"],
   },
   images: {
     remotePatterns: [

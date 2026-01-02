@@ -1,26 +1,22 @@
 /* eslint-disable import/no-anonymous-default-export */
-export const options = {
-  username: "root",
-  password: "HMUnRrKRukUSjpsdFtUekfLCkMDqdenV",
-  database: "railway",
-  host: "roundhouse.proxy.rlwy.net",
-  port: 30380,
-  // username: "tradys_db",
-  // password: "Tr@dyS.2024!",
-  // database: "tradys",
-  // host: "localhost",
-  // port: 3306,
-  dialect: "mysql",
-  logging: process.env.NODE_ENV === "development" ? console.log : false,
-};
+import dotenv from "dotenv";
+dotenv.config();
 
-if (process.env.NODE_ENV === "development") {
-  options.dialectOptions = {
+export const options = {
+  username: process.env.DB_USERNAME || "postgres",
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE || "railway",
+  host: process.env.DB_HOST || "localhost",
+  port: process.env.DB_PORT || 5432,
+  dialect: process.env.DB_DIALECT || "postgres",
+  logging: process.env.NODE_ENV === "development" ? console.log : false,
+  dialectOptions: {
     ssl: {
-      rejectUnauthorized: true,
+      require: true,
+      rejectUnauthorized: false,
     },
-  };
-}
+  },
+};
 
 export default {
   development: options,
